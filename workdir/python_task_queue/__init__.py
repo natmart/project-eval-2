@@ -9,6 +9,12 @@ __version__ = "0.1.0"
 # Core configuration
 from python_task_queue.config import Config, get_config, load_config
 
+# Core data models
+from python_task_queue.models import Task, TaskResult, TaskStatus
+
+# Queue backends
+from python_task_queue.backends import QueueBackend, InMemoryBackend
+
 # Retry system
 from python_task_queue.retry import (
     RetryPolicy,
@@ -23,8 +29,16 @@ from python_task_queue.retry import (
     no_retry_policy,
 )
 
-# Core data models
-from python_task_queue.models import Task, TaskResult, TaskStatus
+# Middleware system
+from python_task_queue.middleware import (
+    Middleware,
+    MiddlewarePipeline,
+    LoggingMiddleware,
+    ExecutionContext,
+)
+
+# Worker system
+from python_task_queue.worker import Worker, WorkerStats, create_worker
 
 __all__ = [
     "__version__",
@@ -32,6 +46,13 @@ __all__ = [
     "Config",
     "get_config",
     "load_config",
+    # Models
+    "Task",
+    "TaskResult",
+    "TaskStatus",
+    # Backends
+    "QueueBackend",
+    "InMemoryBackend",
     # Retry
     "RetryPolicy",
     "RetryStrategy",
@@ -43,8 +64,13 @@ __all__ = [
     "conservative_retry_policy",
     "network_retry_policy",
     "no_retry_policy",
-    # Models
-    "Task",
-    "TaskResult",
-    "TaskStatus",
+    # Middleware
+    "Middleware",
+    "MiddlewarePipeline",
+    "LoggingMiddleware",
+    "ExecutionContext",
+    # Worker
+    "Worker",
+    "WorkerStats",
+    "create_worker",
 ]
