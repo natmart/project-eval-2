@@ -40,6 +40,20 @@ from python_task_queue.middleware import (
 # Worker system
 from python_task_queue.worker import Worker, WorkerStats, create_worker
 
+# Dead Letter Queue
+from python_task_queue.dlq import (
+    DeadLetterTask,
+    DLQBackend,
+    MemoryDLQBackend,
+    DeadLetterQueue,
+)
+
+# Cron Scheduler
+from python_task_queue.scheduler import (
+    CronSchedule,
+    ScheduledJob,
+    CronScheduler,
+)
 __all__ = [
     "__version__",
     # Config
@@ -73,4 +87,13 @@ __all__ = [
     "Worker",
     "WorkerStats",
     "create_worker",
+    # DLQ
+    "DeadLetterTask",
+    "DLQBackend",
+    "MemoryDLQBackend",
+    "DeadLetterQueue",
+    # Scheduler
+    "CronSchedule",
+    "ScheduledJob",
+    "CronScheduler",
 ]
