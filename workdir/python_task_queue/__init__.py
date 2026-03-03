@@ -40,6 +40,14 @@ from python_task_queue.middleware import (
 # Worker system
 from python_task_queue.worker import Worker, WorkerStats, create_worker
 
+# CLI (optional import, may fail if click is not available)
+try:
+    from python_task_queue.cli import cli
+    _cli_available = True
+except ImportError:
+    _cli_available = False
+
+
 __all__ = [
     "__version__",
     # Config
@@ -73,4 +81,6 @@ __all__ = [
     "Worker",
     "WorkerStats",
     "create_worker",
+    # CLI
+    "cli",
 ]
