@@ -1,0 +1,40 @@
+# Example configuration file for Python Task Queue Library
+
+# Queue configuration
+queue_backend: memory  # Options: memory, redis, sqldb
+poll_interval: 1.0     # Seconds between polls for tasks
+max_retries: 3         # Maximum retry attempts for failed tasks
+backoff_base: 2.0      # Base multiplier for exponential backoff
+backoff_max: 300.0     # Maximum backoff time in seconds
+timeout: 300.0         # Default timeout for task execution
+max_concurrent_tasks: 10  # Maximum concurrent tasks
+queue_size_limit: 0    # Max queue size (0 = unlimited)
+
+# Worker configuration
+worker_enabled: true
+worker_threads: 1
+heartbeat_interval: 30.0  # Seconds between heartbeat updates
+
+# Task configuration
+task_result_ttl: 3600      # Time in seconds to keep task results
+task_timeout_default: 300.0  # Default timeout per task
+
+# Monitoring
+enable_metrics: false
+enable_tracing: false
+
+# Logging
+log_level: INFO  # Options: DEBUG, INFO, WARNING, ERROR, CRITICAL
+log_format: "%(asctime)s - %(name)s - %(levelname)s - %(message)s"
+
+# Backend-specific configurations
+backends:
+  redis:
+    host: localhost
+    port: 6379
+    db: 0
+    password: null
+    socket_timeout: 5
+
+  sqlite:
+    path: taskqueue.db
