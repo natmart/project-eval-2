@@ -16,6 +16,8 @@ import warnings
 from pathlib import Path
 from typing import Any, Callable, Dict, List, Optional, Set, TypeVar, Union
 from typing_extensions import Protocol, runtime_checkable
+from dataclasses import dataclass, field
+
 from functools import wraps
 
 
