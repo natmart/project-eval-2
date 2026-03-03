@@ -29,6 +29,17 @@ from python_task_queue.retry import (
     no_retry_policy,
 )
 
+# Middleware system
+from python_task_queue.middleware import (
+    Middleware,
+    MiddlewarePipeline,
+    LoggingMiddleware,
+    ExecutionContext,
+)
+
+# Worker system
+from python_task_queue.worker import Worker, WorkerStats, create_worker
+
 __all__ = [
     "__version__",
     # Config
@@ -53,4 +64,13 @@ __all__ = [
     "conservative_retry_policy",
     "network_retry_policy",
     "no_retry_policy",
+    # Middleware
+    "Middleware",
+    "MiddlewarePipeline",
+    "LoggingMiddleware",
+    "ExecutionContext",
+    # Worker
+    "Worker",
+    "WorkerStats",
+    "create_worker",
 ]
