@@ -26,6 +26,14 @@ from python_task_queue.retry import (
 # Core data models
 from python_task_queue.models import Task, TaskResult, TaskStatus
 
+# Backends
+from python_task_queue.backends import (
+    QueueBackend,
+    QueueBackendError,
+    TaskNotFoundError,
+    SQLiteBackend,
+)
+
 __all__ = [
     "__version__",
     # Config
@@ -47,4 +55,9 @@ __all__ = [
     "Task",
     "TaskResult",
     "TaskStatus",
+    # Backends
+    "QueueBackend",
+    "QueueBackendError",
+    "TaskNotFoundError",
+    "SQLiteBackend",
 ]
