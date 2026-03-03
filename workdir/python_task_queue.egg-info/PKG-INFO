@@ -1,0 +1,32 @@
+Metadata-Version: 2.4
+Name: python-task-queue
+Version: 0.1.0
+Summary: A flexible, production-ready task queue library for Python with pluggable backends
+Author: Task Queue Contributors
+License: MIT
+Project-URL: Homepage, https://github.com/natmart/project-eval-2
+Project-URL: Repository, https://github.com/natmart/project-eval-2
+Project-URL: Issues, https://github.com/natmart/project-eval-2/issues
+Keywords: taskqueue,queue,async,worker,distributed
+Classifier: Development Status :: 3 - Alpha
+Classifier: Intended Audience :: Developers
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.8
+Classifier: Programming Language :: Python :: 3.9
+Classifier: Programming Language :: Python :: 3.10
+Classifier: Programming Language :: Python :: 3.11
+Classifier: Topic :: Software Development :: Libraries :: Python Modules
+Requires-Python: >=3.8
+Description-Content-Type: text/markdown
+Requires-Dist: click>=8.0
+Requires-Dist: pyyaml>=6.0
+Provides-Extra: dev
+Requires-Dist: pytest>=7.0; extra == "dev"
+Requires-Dist: pytest-cov>=4.0; extra == "dev"
+Requires-Dist: pytest-asyncio>=0.21; extra == "dev"
+Requires-Dist: black>=23.0; extra == "dev"
+Requires-Dist: ruff>=0.0.267; extra == "dev"
+Requires-Dist: mypy>=1.0; extra == "dev"
+
+# Python Task Queue Library
