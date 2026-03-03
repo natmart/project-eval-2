@@ -26,6 +26,15 @@ from python_task_queue.retry import (
 # Core data models
 from python_task_queue.models import Task, TaskResult, TaskStatus
 
+# Dead Letter Queue
+from python_task_queue.dlq import (
+    DeadLetterQueue,
+    DeadLetterTask,
+    DLQBackend,
+    MemoryDLQBackend,
+    create_dlq,
+)
+
 __all__ = [
     "__version__",
     # Config
@@ -47,4 +56,10 @@ __all__ = [
     "Task",
     "TaskResult",
     "TaskStatus",
+    # DLQ
+    "DeadLetterQueue",
+    "DeadLetterTask",
+    "DLQBackend",
+    "MemoryDLQBackend",
+    "create_dlq",
 ]
